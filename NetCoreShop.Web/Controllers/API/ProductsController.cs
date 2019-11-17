@@ -19,7 +19,7 @@ namespace NetCoreShop.Web.Controllers.API
         [HttpGet]
         public IActionResult GetProducts()
         {
-            return this.Ok(this.productRepository.GetAll());
+            return this.Ok(this.productRepository.GetAllWithUsers());
         }
 
     }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using NetCoreShop.Web.Helpers;
 using NetCoreShop.Web.Models;
 using System;
+using System.Linq;
 
 namespace NetCoreShop.Web.Controllers
 {
@@ -23,7 +24,7 @@ namespace NetCoreShop.Web.Controllers
         // GET: Products
         public IActionResult Index()
         {
-            return View(this.productRepository.GetAll());
+            return View(this.productRepository.GetAll().OrderBy(p => p.Name));
         }
 
         // GET: Products/Details/5
