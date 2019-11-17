@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NetCoreShop.Web.Data;
 using NetCoreShop.Web.Data.Entities;
+using NetCoreShop.Web.Helpers;
 
 namespace NetCoreShop.Web
 {
@@ -47,6 +48,7 @@ namespace NetCoreShop.Web
 
             services.AddTransient<SeedDb>();
             services.AddScoped<IRepository, Repository>();
+            services.AddScoped<IUserHelper, UserHelper>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {
